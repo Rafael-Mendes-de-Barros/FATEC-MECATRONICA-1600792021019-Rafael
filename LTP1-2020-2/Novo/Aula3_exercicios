@@ -1,0 +1,29 @@
+#Ex1
+def calcula_posicao_final(velocidade, posicao_inicial, tempo):
+    return velocidade*tempo + posicao_inicial
+ 
+def ler_entradas():
+    velocidade = float(input("Informe a velocidade:"))
+    posicao_inicial = float(input("Informe uma posição:"))
+    tempo = float(input("Informe um instante de tempo:"))
+    return velocidade, posicao_inicial, tempo
+ 
+velocidade, posicao_inicial, tempo = ler_entradas()
+posicao_final = calcula_posicao_final(velocidade, posicao_inicial, tempo)
+print(f"No instante de tempo {tempo}, com a velocidade {velocidade}, o usuário estará em: {posicao_final}")
+ 
+ 
+#Ex2
+def ler_entradas():
+    posicao_inicial = float(input("Posicao Inicial:"))
+    posicao_final = float(input("Posicao Final:"))
+    instante_inicial = float(input("Instante Inicial:"))
+    instante_final = float(input("Instante Final:"))
+    return posicao_inicial, posicao_final, instante_inicial, instante_final
+ 
+def calcular_velocidade_media(posicao_inicial, posicao_final, tempo_inicial, tempo_final):
+    return (posicao_final-posicao_inicial)/(tempo_final-tempo_inicial)
+ 
+p0,p1,t0,t1 = ler_entradas()
+vm = calcular_velocidade_media(p0,p1,t0,t1)
+print(f"O valor da velocidade media: {vm}")
