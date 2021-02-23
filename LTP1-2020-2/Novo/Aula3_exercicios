@@ -27,3 +27,20 @@ def calcular_velocidade_media(posicao_inicial, posicao_final, tempo_inicial, tem
 p0,p1,t0,t1 = ler_entradas()
 vm = calcular_velocidade_media(p0,p1,t0,t1)
 print(f"O valor da velocidade media: {vm}")
+ 
+#Ex3
+def calcular_imposto(salario):
+    if salario <= 1903.98:
+        imposto = 0
+    elif salario <= 2826.65:
+        imposto = salario * 0.075 - 142.80
+    elif salario <= 3751.05:
+        imposto = salario * 0.15 - 354.80
+    elif salario <= 4664.68:
+        imposto = salario * 0.225 - 636.13
+    else:
+        imposto = salario * 0.275 - 869.36
+    return imposto
+ 
+salario_base = float(input("Informe Salario:"))
+print(f"para o valor de R${salario_base}, o imposto devido : R${calcular_imposto(salario_base)}")
