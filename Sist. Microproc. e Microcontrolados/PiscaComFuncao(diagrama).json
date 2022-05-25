@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "author": "Edson Kitani",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 14, "left": 148.66, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -55.37,
+      "left": -173.5,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -56.37,
+      "left": -127.83,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -55.37,
+      "left": -82.83,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 64.96,
+      "left": 19.5,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 90.63,
+      "left": 19.83,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 116.96,
+      "left": 20.83,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -64.04,
+      "left": 33.17,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -65.37,
+      "left": 125.17,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "r4:1", "led1:A", "green", [ "v-3.59", "h-167" ] ],
+    [ "r3:1", "led2:A", "green", [ "v-2.59", "h-125.33" ] ],
+    [ "r2:1", "led3:A", "green", [ "v0.41", "h-70.33" ] ],
+    [ "esp:D13", "r4:2", "green", [ "h0" ] ],
+    [ "esp:D12", "r3:2", "green", [ "h-60.49", "v-44.7" ] ],
+    [ "esp:D14", "r2:2", "green", [ "h-51.16", "v-58.96" ] ],
+    [ "led3:C", "esp:GND.1", "green", [ "v251.07", "h352", "v-75.33" ] ],
+    [ "led2:C", "esp:GND.1", "green", [ "v251.41", "h395.66", "v-75.33" ] ],
+    [ "led1:C", "esp:GND.1", "green", [ "v249.74", "h444", "v-72" ] ],
+    [ "btn1:1.r", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "esp:3V3", "green", [ "v0.07", "h93.22", "v225.33" ] ],
+    [ "btn1:2.r", "esp:GND.1", "green", [ "h229.22", "v200.41" ] ],
+    [ "btn1:1.l", "esp:D23", "green", [ "h-16.84", "v56.08", "h244", "v41.33" ] ]
+  ]
+}
