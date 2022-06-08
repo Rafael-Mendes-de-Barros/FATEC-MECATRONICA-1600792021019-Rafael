@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -123.37,
+      "left": 116.17,
+      "attrs": { "distance": "288" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -112.57,
+      "left": -235.58,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -28.21,
+      "left": -234.3,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 66.4,
+      "left": -230.39,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -72.07,
+      "left": -138.8,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 4.62,
+      "left": -139.59,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 110.08,
+      "left": -137.2,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "ultrasonic1:TRIG", "esp:D5", "green", [ "v0" ] ],
+    [ "ultrasonic1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "ultrasonic1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "ultrasonic1:ECHO", "esp:D18", "green", [ "v0" ] ],
+    [ "led1:A", "r1:1", "green", [ "v0" ] ],
+    [ "led2:A", "r2:1", "green", [ "v0" ] ],
+    [ "led3:A", "r3:1", "green", [ "v0" ] ],
+    [ "r1:2", "esp:D13", "green", [ "v-0.14", "h65.22", "v199.73" ] ],
+    [ "r2:2", "esp:D12", "green", [ "v-0.13", "h48.44", "v112.65" ] ],
+    [ "r3:2", "esp:D14", "green", [ "v0.66", "h29.27", "v7.99" ] ],
+    [ "led1:C", "esp:GND.2", "green", [ "v2.61", "h-36.72", "v220.25" ] ],
+    [ "led2:C", "esp:GND.2", "green", [ "v-0.13", "h-37", "v133.47" ] ],
+    [ "led3:C", "esp:GND.2", "green", [ "v2.73", "h-40.91", "v34.32" ] ]
+  ]
+}
