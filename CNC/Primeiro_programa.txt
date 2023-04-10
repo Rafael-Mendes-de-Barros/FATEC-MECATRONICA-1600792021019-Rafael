@@ -1,0 +1,35 @@
+;==================================================================
+; Primeiro programa de CNC da Turma do 1 Semestre de 2023
+; Programa da página 65 da aula 5
+;==================================================================
+
+; Este cabeçalho contém as funções preparatórias
+
+G18           ; Define o plano X Z no torno
+G90           ; Define coordenadas absolutas
+M3 S1000      ; Liga Spindle com 1000 RPM
+DIAMON        ; Prepara X em diametro
+
+
+WORKPIECE(,,,"CYLINDER",0,0,-100,-75,70)
+T3 D1
+
+G00 X200 Z200 ; Movimento rápido e indepedete de cada eixo
+G90 
+G00 X0
+G00 Z1
+G01 Z0 F10
+G01 X40 F10
+G01 Z-10 F10
+G01 X60 Z-25 F10
+G01 Z-70
+G00 X100
+G00 Z100
+;G91
+;G01 X-50 F100
+;G01 Z-10 F100
+;G01 X-30 F100
+;G01 Z-20 F100
+;G01 X-50 Z-50 F100
+
+M30           ; Finaliza o programa
